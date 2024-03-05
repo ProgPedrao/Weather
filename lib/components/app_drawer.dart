@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather/utils/app_routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -10,7 +11,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: const Text("Bem vindo"),
+            title: Text(AppLocalizations.of(context)!.welcome),
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           ),
@@ -19,7 +20,7 @@ class AppDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text("Home"),
+            title: Text(AppLocalizations.of(context)!.home),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(AppRoutes.home);
             },
@@ -27,7 +28,7 @@ class AppDrawer extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text("Configurações"),
+            title: Text(AppLocalizations.of(context)!.settings),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(AppRoutes.settings);
             },

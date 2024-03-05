@@ -1,0 +1,20 @@
+{
+    "@@locale": "en",
+    "current_language": "English",
+    "@language":{
+        "description": "The current Language"
+    },
+
+    "home": "Home",
+    
+    "welcome": "Welcome",
+
+    "title": "Weather",
+    "settings": "Settings",
+    "general_settings": "General settings",
+    "languages": "Languages",
+    "appearance": "Appearance",
+    "rate_app": "Rate the app",
+    "privacy_term": "Privacy and term",
+    "about_us": "About us"
+}

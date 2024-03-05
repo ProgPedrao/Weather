@@ -1,9 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/components/app_drawer.dart';
 import 'package:weather/components/settings_item.dart';
+import 'package:weather/l10n/l10n.dart';
+import 'package:weather/l10n/locale_provider.dart';
 import 'package:weather/theme/theme_provider.dart';
 import 'package:weather/utils/app_routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -11,6 +16,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeProvider themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    LocaleProvider localeProvider = Provider.of<LocaleProvider>(context, listen: false);
 
     return Scaffold(
         // appBar: AppBar(
@@ -42,7 +48,7 @@ class SettingsScreen extends StatelessWidget {
                 title: Padding(
                   padding: const EdgeInsets.only(top: 14.0, bottom: 0.0),
                   child: Text(
-                    "Configurações",
+                    AppLocalizations.of(context)!.settings,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
@@ -66,7 +72,7 @@ class SettingsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(
-                      "Configuração geral",
+                      AppLocalizations.of(context)!.general_settings,
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!
@@ -75,35 +81,38 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   SettingsItem(
-                    title: "Línguas",
+                    title: AppLocalizations.of(context)!.languages,
                     subtitle: null,
                     trailing: Icons.chevron_right,
                     leading: Icons.language,
-                    onTap: (){},
+                    onTap: (){
+                      final index = L10n.all.indexOf(localeProvider.locale) == 0 ? 1 : 0;
+                      localeProvider.setLocale(L10n.all[index]);
+                    },
                   ),
                   SettingsItem(
-                    title: "Aparência",
+                    title: AppLocalizations.of(context)!.appearance,
                     subtitle: null,
                     trailing: Icons.chevron_right,
                     leading: themeProvider.themeDataIcon,
                     onTap: () => themeProvider.toggleTheme(),
                   ),
                   SettingsItem(
-                    title: "Avalie o aplicativo",
+                    title: AppLocalizations.of(context)!.rate_app,
                     subtitle: null,
                     trailing: Icons.chevron_right,
                     leading: Icons.star_border,
                     onTap: (){},
                   ),
                   SettingsItem(
-                    title: "Privacidade e prazo",
+                    title: AppLocalizations.of(context)!.privacy_term,
                     subtitle: null,
                     trailing: Icons.chevron_right,
                     leading: Icons.description_outlined,
                     onTap: (){},
                   ),
                   SettingsItem(
-                    title: "Sobre nós",
+                    title: AppLocalizations.of(context)!.about_us,
                     subtitle: null,
                     trailing: Icons.chevron_right,
                     leading: Icons.info_outline,

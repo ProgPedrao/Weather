@@ -5,6 +5,7 @@ import 'package:weather/models/weather_model.dart';
 import 'package:weather/services/location_service.dart';
 import 'package:weather/services/weather_service.dart';
 import 'package:weather/utils/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -61,7 +62,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Weather"),
+        // title: const Text("Weather"),
+        title: Text(AppLocalizations.of(context)!.title),
         actions: [
           IconButton(onPressed: () {
             

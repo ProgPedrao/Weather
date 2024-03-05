@@ -1,0 +1,21 @@
+{
+    "@@locale": "pt",
+    "current_language": "Portugues",
+    "@language":{
+        "description": "A lingua atual"
+    },
+
+
+    "home": "Principal",
+
+    "welcome": "Bem vindo",
+
+    "title": "Clima",
+    "settings": "Configurações",
+    "general_settings": "Configurações gerais",
+    "languages": "Línguas",
+    "appearance": "Aparência",
+    "rate_app": "Avalie o aplicativo",
+    "privacy_term": "Privacidade e prazo",
+    "about_us": "Sobre nós"
+}
