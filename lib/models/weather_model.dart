@@ -29,11 +29,11 @@ class Weather {
       case 'rain':
       case 'drizzle':
       case 'shower rain':
-        return dateTime.hour > 18 ? 'assets/animations/moon_rain.json' : 'assets/animations/sun_rain.json';
+        return dateTime.hour > 17 || dateTime.hour < 5 ? 'assets/animations/moon_rain.json' : 'assets/animations/sun_rain.json';
       case 'thunderstorm':
         return 'assets/animations/storm.json';
       case 'clear':
-      return dateTime.hour > 18 ? 'assets/animations/moon.json' : 'assets/animations/sun.json';
+      return dateTime.hour > 17 || dateTime.hour < 5 ? 'assets/animations/moon.json' : 'assets/animations/sun.json';
       default:
         return 'assets/animations/cloud.json';
     }
