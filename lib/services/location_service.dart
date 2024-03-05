@@ -33,7 +33,12 @@ class LocationService {
 
     List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
 
-    String? city = placemarks[0].locality;
+    if (placemarks.isEmpty) {
+      throw Exception(
+          "Não foi possível localizar a cidade");
+    }
+
+    String? city = placemarks.any((element) => element.locality!.isNotEmpty) ? placemarks[0].locality : placemarks[0].subAdministrativeArea;
 
     if (city == null || city.isEmpty) {
       throw Exception(
