@@ -56,8 +56,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
   void initState() {
     super.initState();
 
-    Provider.of<ThemeProvider>(context, listen: false).tryThemeData();
-
     _fetchWeather();
   }
 
