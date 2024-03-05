@@ -91,7 +91,7 @@ class SettingsScreen extends StatelessWidget {
                     subtitle: null,
                     trailing: Icons.chevron_right,
                     leading: themeProvider.themeDataIcon,
-                    onTap: () => themeProvider.toggleTheme(),
+                    onTap: () async => await themeProvider.toggleTheme(),
                   ),
                   SettingsItem(
                     title: AppLocalizations.of(context)!.rate_app,

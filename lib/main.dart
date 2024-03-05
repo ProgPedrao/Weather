@@ -15,7 +15,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => ThemeProvider(),
+          create: (context) => ThemeProvider()..tryThemeData(),
         ),
         ChangeNotifierProvider(
           create: (context) => LocaleProvider(),
