@@ -18,7 +18,7 @@ void main() {
           create: (context) => ThemeProvider()..tryThemeData(),
         ),
         ChangeNotifierProvider(
-          create: (context) => LocaleProvider(),
+          create: (context) => LocaleProvider()..tryLocale(),
         ),
       ],
       child: const MyApp(),
