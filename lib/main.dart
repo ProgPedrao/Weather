@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/l10n/l10n.dart';
 import 'package:weather/l10n/locale_provider.dart';
+import 'package:weather/screens/language_list_screen.dart';
 import 'package:weather/screens/settings_screen.dart';
 import 'package:weather/screens/weather_screen.dart';
 import 'package:weather/theme/theme_provider.dart';
@@ -41,10 +42,11 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate
       ],
-      supportedLocales: L10n.all,
+      supportedLocales: L10n.locales,
       routes: {
         AppRoutes.home: (context) => const WeatherScreen(),
         AppRoutes.settings: (context) => const SettingsScreen(),
+        AppRoutes.languages: (context) => const LanguageListScreen(),
       },
       // home: const WeatherScreen(title: 'Weather'),
     );

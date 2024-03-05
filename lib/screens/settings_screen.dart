@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/components/app_drawer.dart';
 import 'package:weather/components/settings_item.dart';
-import 'package:weather/l10n/l10n.dart';
-import 'package:weather/l10n/locale_provider.dart';
 import 'package:weather/theme/theme_provider.dart';
 import 'package:weather/utils/app_routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,7 +14,6 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeProvider themeProvider = Provider.of<ThemeProvider>(context, listen: false);
-    LocaleProvider localeProvider = Provider.of<LocaleProvider>(context, listen: false);
 
     return Scaffold(
         // appBar: AppBar(
@@ -86,8 +83,7 @@ class SettingsScreen extends StatelessWidget {
                     trailing: Icons.chevron_right,
                     leading: Icons.language,
                     onTap: (){
-                      final index = L10n.all.indexOf(localeProvider.locale) == 0 ? 1 : 0;
-                      localeProvider.setLocale(L10n.all[index]);
+                      Navigator.of(context).pushNamed(AppRoutes.languages);
                     },
                   ),
                   SettingsItem(
