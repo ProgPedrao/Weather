@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:weather/components/app_drawer.dart';
 import 'package:weather/models/weather_model.dart';
 import 'package:weather/services/location_service.dart';
 import 'package:weather/services/weather_service.dart';
 import 'package:weather/utils/constants.dart';
 
 class WeatherScreen extends StatefulWidget {
-  const WeatherScreen({super.key, required this.title});
+  const WeatherScreen({super.key});
 
-  final String title;
 
   @override
   State<WeatherScreen> createState() => _WeatherScreenState();
@@ -61,8 +61,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text("Weather"),
+        actions: [
+          IconButton(onPressed: () {
+            
+          }, icon: const Icon(Icons.location_on))
+        ],
       ),
+      drawer: const AppDrawer(),
       body: Stack(
         children: [
           Center(
