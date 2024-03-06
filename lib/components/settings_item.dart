@@ -5,7 +5,7 @@ class SettingsItem extends StatelessWidget {
 
   final String title;
   final String? subtitle;
-  final IconData trailing;
+  final Widget trailing;
   final IconData leading;
   final Function onTap;
 
@@ -21,7 +21,7 @@ class SettingsItem extends StatelessWidget {
           leading: Icon(leading),
           title: Text(title),
           subtitle: subtitle == null ? null : Text(subtitle!),
-          trailing: Icon(trailing),
+          trailing: trailing,
         ),
       ),
     );

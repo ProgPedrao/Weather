@@ -17,5 +17,9 @@
     "appearance": "Aparência",
     "rate_app": "Avalie o aplicativo",
     "privacy_term": "Privacidade e prazo",
-    "about_us": "Sobre nós"
+    "about_us": "Sobre nós",
+
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Escuro"
 }

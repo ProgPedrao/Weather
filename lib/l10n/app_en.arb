@@ -16,5 +16,9 @@
     "appearance": "Appearance",
     "rate_app": "Rate the app",
     "privacy_term": "Privacy and term",
-    "about_us": "About us"
+    "about_us": "About us",
+
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
 }

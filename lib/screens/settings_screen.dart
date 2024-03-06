@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/components/app_drawer.dart';
+import 'package:weather/components/dropdown_button_settings.dart';
 import 'package:weather/components/settings_item.dart';
 import 'package:weather/theme/theme_provider.dart';
 import 'package:weather/utils/app_routes.dart';
@@ -11,7 +12,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    ThemeProvider themeProvider =
+        Provider.of<ThemeProvider>(context, listen: false);
 
     return Scaffold(
         // appBar: AppBar(
@@ -78,39 +80,41 @@ class SettingsScreen extends StatelessWidget {
                   SettingsItem(
                     title: AppLocalizations.of(context)!.languages,
                     subtitle: null,
-                    trailing: Icons.chevron_right,
+                    trailing: const Icon(Icons.chevron_right),
                     leading: Icons.language,
-                    onTap: (){
+                    onTap: () {
                       Navigator.of(context).pushNamed(AppRoutes.languages);
                     },
                   ),
-                  SettingsItem(
-                    title: AppLocalizations.of(context)!.appearance,
-                    subtitle: null,
-                    trailing: Icons.chevron_right,
-                    leading: themeProvider.themeDataIcon,
-                    onTap: () async => await themeProvider.toggleTheme(),
+                  Consumer<ThemeProvider>(
+                    builder: (context, value, child) => SettingsItem(
+                      title: AppLocalizations.of(context)!.appearance,
+                      subtitle: null,
+                      trailing: const DropdownButtonSettings(),
+                      leading: themeProvider.themeDataIcon,
+                      onTap: () {},
+                    ),
                   ),
                   SettingsItem(
                     title: AppLocalizations.of(context)!.rate_app,
                     subtitle: null,
-                    trailing: Icons.chevron_right,
+                    trailing: const Icon(Icons.chevron_right),
                     leading: Icons.star_border,
-                    onTap: (){},
+                    onTap: () {},
                   ),
                   SettingsItem(
                     title: AppLocalizations.of(context)!.privacy_term,
                     subtitle: null,
-                    trailing: Icons.chevron_right,
+                    trailing: const Icon(Icons.chevron_right),
                     leading: Icons.description_outlined,
-                    onTap: (){},
+                    onTap: () {},
                   ),
                   SettingsItem(
                     title: AppLocalizations.of(context)!.about_us,
                     subtitle: null,
-                    trailing: Icons.chevron_right,
+                    trailing: const Icon(Icons.chevron_right),
                     leading: Icons.info_outline,
-                    onTap: (){},
+                    onTap: () {},
                   ),
                 ],
               )

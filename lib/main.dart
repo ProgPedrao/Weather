@@ -34,7 +34,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Weather',
-      theme: Provider.of<ThemeProvider>(context).themeData,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: Provider.of<ThemeProvider>(context).themeMode,
       locale: Provider.of<LocaleProvider>(context).locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
