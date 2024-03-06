@@ -20,5 +20,17 @@
 
     "system": "System",
     "light": "Light",
-    "dark": "Dark"
+    "dark": "Dark",
+
+    "clouds": "Clouds",
+    "mist": "Mist",
+    "smoke": "Smoke",
+    "haze": "Haze",
+    "dust": "Dust",
+    "fog": "Fog",
+    "rain": "Rain",
+    "drizzle": "Drizzle",
+    "shower_rain": "Shower rain",
+    "thunderstorm": "Thunderstorm",
+    "clear": "Clear"
 }

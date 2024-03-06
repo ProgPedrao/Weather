@@ -93,7 +93,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
                           Text(
-                            '${_weather?.mainCondition}',
+                            '${_weather?.getWeatherTranslation(context)}',
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
                         ],

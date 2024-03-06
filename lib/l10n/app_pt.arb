@@ -21,5 +21,17 @@
 
     "system": "Sistema",
     "light": "Claro",
-    "dark": "Escuro"
+    "dark": "Escuro",
+    
+    "clouds": "Nuvens",
+    "mist": "Névoa",
+    "smoke": "Enfumaçado",
+    "haze": "Neblina",
+    "dust": "Poeira",
+    "fog": "Névoa",
+    "rain": "Rain",
+    "drizzle": "Chuvisco",
+    "shower_rain": "Chuva",
+    "thunderstorm": "Tempestade",
+    "clear": "Limpo"
 }
